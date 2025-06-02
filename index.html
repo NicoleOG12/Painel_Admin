@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<img src="./img/flor_cerejeira.png" alt="Flor de cerejeira" class="top-decor-left">
+<img src="./img/flor_cerejeira.png" alt="Flor de cerejeira" class="top-decor-right">
+
+  <div class="container">
+    <h1>Painel de Administração</h1>
+
+    <div>
+      <input type="text" id="nomeInput" placeholder="Nome">
+      <input type="text" id="emailInput" placeholder="Email"> <!-- aqui! -->
+      <input type="password" id="senhaInput" placeholder="Senha">
+      <button onclick="cadastrarUsuario()">Cadastrar</button>
+
+      <input type="text" id="searchInput" class="search-bar" placeholder="Pesquisar por ID ou Nome" onkeyup="pesquisarUsuario()">
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Senha</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaUsuarios"></tbody>
+    </table>
+  </div>
+
+  <div class="modal" id="modalEditar">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>Editar Usuário</h2>
+      <input type="text" id="editId" placeholder="ID" disabled><br>
+      <input type="text" id="editNome" placeholder="Nome"><br>
+      <input type="text" id="editEmail" placeholder="Email"><br>
+      <input type="text" id="editSenha" placeholder="Senha"><br>
+      <button onclick="salvarEdicao()">Salvar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

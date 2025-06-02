@@ -1,0 +1,245 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 40px;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.top-decor-left,
+.top-decor-right {
+  position: fixed;
+  top: 0;
+  width: 280px;
+  height: auto;
+  z-index: 2;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.top-decor-left {
+  left: 0;
+}
+
+.top-decor-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff0f6;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+  border: 2px solid #f8bbd0;
+  animation: popUp 0.5s ease-in-out;
+  position: relative; 
+  z-index: 10; 
+  margin-top: 120px;
+}
+
+h1 {
+  text-align: center;
+  color: #d81b60;
+  font-size: 2.5em;
+  text-shadow: 1px 1px #f8bbd0;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid #f8bbd0;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input {
+  background: #fff;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+
+input:focus {
+  border-color: #ce93d8;
+  box-shadow: 0 0 10px #f48fb1;
+}
+
+button {
+  background-color: #f48fb1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ec407a;
+  transform: scale(1.05);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding-left: 40px;
+  font-size: 16px;
+}
+
+.search-bar::before {
+  content: '\1F50D';
+  position: absolute;
+  left: 15px;
+  color: #ec407a;
+  font-size: 18px;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #f8bbd0;
+  padding: 10px;
+  text-align: center;
+  background-color: #fce4ec;
+}
+
+th {
+  background-color: #f48fb1;
+  color: white;
+}
+
+td {
+  color: #6a1b9a;
+}
+
+.actions button {
+  margin: 0 3px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-content {
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  margin: 10% auto;
+  padding: 20px;
+  width: 400px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(236, 64, 122, 0.5);
+  animation: popUp 0.5s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #ad1457;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: #d81b60;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close:hover {
+  transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.fall-flower {
+  position: fixed;
+  top: -2em;
+  pointer-events: none;
+  user-select: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+#chao-petalas {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 150px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1000;
+}
+
+.acumulada {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  bottom: 0;
+}
+
+#acumulada, .acumulada {
+  pointer-events: none;
+  user-select: none;
+}
+
+#chao-petalas {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 150px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1000;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(30px, 110vh) rotate(360deg);
+    opacity: 1;
+  }
+}
